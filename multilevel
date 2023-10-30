@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+class A{
+    public :
+    int a=56;
+    virtual void display()=0;
+    virtual void display1()=0;
+    virtual void display2()=0;
+};
+class B : public A{
+    public :
+    int b=67;
+    void display(){
+        int c=a+b;  
+        cout<<c<<endl;}
+    void display1(){
+        cout<<a<<endl;
+        cout<<b<<endl;
+    }
+};
+class C:public B{
+    public:
+    int e,f;
+     void display2(){
+        cout<<"value of a"<<endl;
+        cin>>a;
+        cout<<"value of b"<<endl;
+        cin>>b;}
+};
+int main()
+{   B *ptr;
+    
+    C p;
+    ptr=&p;
+    ptr->display();
+    ptr->display1();
+    ptr->display2();
+   
+    return 0;
+}
